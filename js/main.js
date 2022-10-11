@@ -21,7 +21,7 @@ const colors = {
 }
 
 
-const pokeCount =10;
+const pokeCount =151;
 
 const initPokemon = async ()=>{
     for(let i=1; i<=pokeCount;i++){
@@ -45,20 +45,34 @@ const createPokemonBox=(pokemon)=>{
 
     const pokemonEl=document.createElement('div');
     pokemonEl.classList.add('poke-box');
+    pokemonEl.style.backgroundColor= `${color}`
     pokemonEl.innerHTML=`
     
-    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}" alt="">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png" alt="${name} image">
             <h4 class="poke-name">${name}</h4>
-            <p class="poke-id">${id}</p>
-            <p class="poke-weight">${weight}</p>
+            <p class="poke-id">#${id}</p>
+            <p class="poke-weight">${weight}Kg</p>
             <p class="poke-type">Type: ${type}</p>
-    
-    `
+    `;
 
-
-
-
+    pokeContainer.appendChild(pokemonEl);
 }
 
 
 initPokemon();
+
+searchInput.addEventListener('input',function (e) {
+    const pokeNames=document.querySelectorAll('.poke-name');
+    const search =searchInput.value.toLowerCase();
+    console.log(pokeNames);
+
+
+    pokeNames.forEach((pokaName) => {
+        pokaName.parentElement.style.display='block';
+
+        if(!pokaName.innerHTML.toLowerCase().includes(search)){
+            pokaName.parentElement.style.display='none';
+        }
+    });
+    console.log(search);
+})
