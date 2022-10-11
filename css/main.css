@@ -16,21 +16,76 @@ body{
     flex-direction: column;
     width: 100vw;
     text-align: center;
+    overflow-x: hidden;
     
 }
+
+h1{
+    color: #fff;
+    font-size: 3rem;
+    margin-top: 30px;
+}
+
 
 form{
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 input,button{
-
     background-color: #fff;
     border: none;
-    padding: 10px,20px;
-    
+    padding: 10px 20px;
+    font-size: 1.2rem;
+
+    border-radius: 5px 0 0 5px;
+}
+button{
+    border-radius: 0 5px 5px 0;
+}
+input:focus{
+    outline: none;
+}
+
+input{
+    font-weight: bold;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+.poke-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 3rem;
+}
+
+.poke-box{
+    margin: 10px;
+    width: 260px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+
+.poke-box img{
+    margin: 10px 0;
+    width: 90%;
+}
+
+.poke-box h4{
+    font-size: 1.2rem;
+    margin: 5px auto;
+}
+
+.poke-box p{
+    margin: 5px auto;
 }
