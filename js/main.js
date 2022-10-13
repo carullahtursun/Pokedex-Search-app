@@ -21,7 +21,7 @@ const colors = {
 }
 
 
-const pokeCount =151;
+const pokeCount =150;
 
 const initPokemon = async ()=>{
     for(let i=1; i<=pokeCount;i++){
@@ -34,6 +34,8 @@ const getPokemon =async (id)=>{
     let res = await fetch(url);
     let data =await res.json();
     createPokemonBox(data);
+    console.log(data);
+
 }
 
 const createPokemonBox=(pokemon)=>{
@@ -53,6 +55,7 @@ const createPokemonBox=(pokemon)=>{
             <p class="poke-id">#${id}</p>
             <p class="poke-weight">${weight}Kg</p>
             <p class="poke-type">Type: ${type}</p>
+            
     `;
 
     pokeContainer.appendChild(pokemonEl);
